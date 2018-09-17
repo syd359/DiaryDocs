@@ -1,8 +1,8 @@
 ------
 
-## 2018-09-04
+# 2018-09-04
 
-#### 1. The Packages to Research:
+### 1. The Packages to Research:
 
 * **hyperopt**
 
@@ -20,7 +20,7 @@ Benchmark Folder: sx\_zlc
 
 
 
-#### 2. RNN \(GRU/LSTM\) Model
+### 2. RNN \(GRU/LSTM\) Model
 
 进一步：
 
@@ -32,7 +32,7 @@ Benchmark Folder: sx\_zlc
 
 
 
-#### 3. GitLab Research ＆Standard
+### 3. GitLab Research ＆Standard
 
 	Already Done !
 
@@ -42,7 +42,85 @@ Benchmark Folder: sx\_zlc
 
 ------
 
-## 2018-09-17
+# 2018-09-11
+
+**数据集**：[Home Credit Default Risk (kaggle)](https://www.kaggle.com/c/home-credit-default-risk)
+
+ **第一名**：[https://www.kaggle.com/c/home-credit-default-risk/discussion/64821](#)
+
+1. LightGBM官方文档以及测试。 官文：[https://lightgbm.readthedocs.io/en/latest/index.html](#) Github：[https://github.com/Microsoft/LightGBM](#)
+
+2. 这里是列表文本Bayesian Optimization
+
+   - Github: https://github.com/fmfn/BayesianOptimization](#)
+   - 一些关键术语： Gaussian Process -- Upper Confidence Bound (UCB), kappa, maximum of the acquisition function
+   - Cubic correlation
+   - Proxy Optimization Problem (finding the maximum of the acquisition function)
+
+3. Bayesian Optimization with LGBM
+
+   - 单独使用LGBM：[Good_fun_with_LigthGBM](#)
+   - 使用已经训练好的Bayes参数:[LightGBM parameters by Bayesian opt](#)
+   - [Simple Bayesian Optimization for LightGBM](#)
+   - [[0.797\]LGBM and Bayesian Optimization](#)
+   - 对Sklearn里的BayesOpt的一些解释： [https://thuijskens.github.io/2016/12/29/bayesian-optimisation/](#)
+
+4. Hyperopt (AutoML) 
+
+   官方Docs:[http://hyperopt.github.io/hyperopt/](#) 
+
+   Github:[Distributed Asynchronous Hyperparameter Optimization in Python](#)
+
+   [Automated Model Tuning From Kaggle](#)
+
+5. Spearmint 
+
+   Github:[Spearmint Bayesian optimization codebase](#)
+
+6. MOE 
+
+   Github:[A global, black box optimization engine for real world metric optimization](#)
+
+   官方Docs:[http://yelp.github.io/MOE/](#)
+
+
+
+
+
+------
+
+# 2018-09-12
+
+1. **Gitlab搭建** 
+
+   [通过 docker 搭建自用的 gitlab 服务](#) 
+
+   Docker官方：[https://docs.docker.com/docker-for-windows/install/](#)
+
+2. **Vim使用**
+
+   If you’re interested in more production-ready systems, it is worthwhile to check out**MOE, Spearmint, or hyperopt**. These implementations can also deal with integer, and categorical, hyperparameters. 
+
+   * Spearmint：[https://github.com/HIPS/Spearmint](#)
+   * hyperopt：[https://github.com/hyperopt/hyperopt](#) 
+   * MOE：[https://github.com/Yelp/MOE](#)
+
+3. **glob Module**: 
+
+   Easy handle folder files
+
+```
+for path in glob.glob(r"../data/*.csv", recursive=True):
+    logger.info(f"Use Data File ----> {path[8:]}")
+```
+
+
+
+
+
+------
+
+# 2018-09-17
 
 Hyperopt 自动调参简单教程： [自动化机器学习超参数调优](https://towardsdatascience.com/automated-machine-learning-hyperparameter-tuning-in-python-dfda59b72f8a)  （含分析）
 
