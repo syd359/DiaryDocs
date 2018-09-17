@@ -48,7 +48,11 @@ Benchmark Folder: sx\_zlc
 
  **第一名**：[https://www.kaggle.com/c/home-credit-default-risk/discussion/64821](#)
 
-1. LightGBM官方文档以及测试。 官文：[https://lightgbm.readthedocs.io/en/latest/index.html](#) Github：[https://github.com/Microsoft/LightGBM](#)
+1. LightGBM官方文档以及测试。 
+
+   官文：[https://lightgbm.readthedocs.io/en/latest/index.html](#) 
+
+   Github：[https://github.com/Microsoft/LightGBM](#)
 
 2. 这里是列表文本Bayesian Optimization
 
@@ -72,6 +76,8 @@ Benchmark Folder: sx\_zlc
    Github:[Distributed Asynchronous Hyperparameter Optimization in Python](#)
 
    [Automated Model Tuning From Kaggle](#)
+
+   [Home Credit Hyperopt Optimization (Kaggle Kernel)](https://www.kaggle.com/ogrellier/home-credit-hyperopt-optimization/notebook)
 
 5. Spearmint 
 
