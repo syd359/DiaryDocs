@@ -128,5 +128,11 @@ for path in glob.glob(r"../data/*.csv", recursive=True):
 
 # 2018-09-17
 
-Hyperopt 自动调参简单教程： [自动化机器学习超参数调优](https://towardsdatascience.com/automated-machine-learning-hyperparameter-tuning-in-python-dfda59b72f8a)  （含分析）
+	Hyperopt 自动调参简单教程： [自动化机器学习超参数调优](https://towardsdatascience.com/automated-machine-learning-hyperparameter-tuning-in-python-dfda59b72f8a)  （含分析）
+
+	[Chinese Word Vectors 中文词向量 Github](https://github.com/Embedding/Chinese-Word-Vectors)
+
+[^]: This project provides 100+ Chinese Word Vectors (embeddings) trained with different **representations** (dense and sparse), **context features** (word, ngram, character, and more), and **corpora**. One can easily obtain pre-trained vectors with different properties and use them for downstream tasks.
+
+
 
