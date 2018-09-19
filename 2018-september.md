@@ -155,5 +155,27 @@ fdata = codecs.open(file_name, "r",encoding='utf-8', errors='ignore')
 df = pd.read_csv(fdata, header=None, encoding='utf-8', error_bad_lines=False, engine='c')
 ```
 
+### 3. Get Number of Year/Month/Day from now
+
+```python
+# The most Pythonic & easy way from Now
+(datetime.now() - df['DateColumn'].astype('timedelta64[M]').astype(np.int)
+# change the M to Y, M, D as you want, OR drop np.int to get float years/days/...
+# 转化成pd.Timestamp在 year 计算上没问题，但是在months和days上有问题，只能得到日期月份数的差值
+```
+
+- **设定Time Zone并返回其月份（1-12）**
+
+`df.dt.tz_localize('Asia/Shanghai').dt.month` 
+
+- **Replace values that have a count smaller than X**
+
+```python
+df.loc[df.groupby('A').A.transform('count').lt(2), 'A'] = np.nan  
+# if you want larger that 
+# just add a ~, such as:
+df.loc[~df.groupby('A').A.transform('count').lt(2), 'A'] = np.nan
+```
+
 
 
