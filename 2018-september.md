@@ -179,3 +179,70 @@ df.loc[~df.groupby('A').A.transform('count').lt(2), 'A'] = np.nan
 
 
 
+# 2018-09-20
+
+### 1. Use Customized Evaluation Metrics for LightGBM
+
+```python
+from sklearn.metrics import f1_score, recall_score
+
+def lgb_f1_score(y_hat, data):
+    y_true = data.get_label()
+    y_hat = np.round(y_hat) # scikits f1 doesn't like probabilities
+    return 'f1', f1_score(y_true, y_hat), True
+
+evals_result = {}
+
+clf = lgb.train(param, train_data, valid_sets=[val_data, train_data], valid_names=['val', 'train'], feval=lgb_f1_score, evals_result=evals_result)
+
+lgb.plot_metric(evals_result, metric='f1')
+```
+
+
+
+### 2. Imblearn Package
+
+- Kaggle Kernel: [SMOTE with Imbalance Data](https://www.kaggle.com/qianchao/smote-with-imbalance-data)
+- Pandas_ml Docs: [Handling imbalanced data](https://pandas-ml.readthedocs.io/en/latest/imbalance.html)
+
+
+
+### 3. Beyond OneHotEncoding
+
+- [Beyond One-Hot: an exploration of categorical variables](http://www.willmcginnis.com/2015/11/29/beyond-one-hot-an-exploration-of-categorical-variables/)
+- Scikit-Learn brief tutorial: http://contrib.scikit-learn.org/categorical-encoding/index.html?highlight=encoders
+
+
+
+
+
+### 4. Install Python Package Offline
+
+- **Use Conda:**  [anaconda repository](https://anaconda.org/anaconda/repo)
+
+​	Open command prompt, cd to apropiate directory and type
+
+```python
+conda install package-name.tar.bz2
+```
+
+OR
+
+```python
+pip install package.tar.gz
+```
+
+
+
+### 5. 模型可解释性与个性化结果
+
+Origin Paper: [“Why Should I Trust You?” - Explaining the Predictions of Any Classifier](https://arxiv.org/pdf/1602.04938v1.pdf)
+
+Brief Explanation: [Introduction to Local Interpretable Model-Agnostic Explanations (LIME)](https://www.oreilly.com/learning/introduction-to-local-interpretable-model-agnostic-explanations-lime)
+
+
+
+### 6. xgboost  &  lightgbm
+
+
+
