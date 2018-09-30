@@ -220,7 +220,7 @@ lgb.plot_metric(evals_result, metric='f1')
 
 - **Use Conda:**  [anaconda repository](https://anaconda.org/anaconda/repo)
 
-​	Open command prompt, cd to apropiate directory and type
+		Open command prompt, cd to apropiate directory and type
 
 ```python
 conda install package-name.tar.bz2
@@ -246,3 +246,16 @@ Brief Explanation: [Introduction to Local Interpretable Model-Agnostic Explanati
 
 
 
+
+
+# 2018-09-29
+
+### 1. Neural Computation & Adaptive Perception (Harvard 课程)
+
+Syllabus: http://www.iro.umontreal.ca/~bengioy/cifar/NCAP2014-summerschool/
+
+
+
+## 2. Python 面试
+
+Github: https://github.com/taizilongxu/interview_python
