@@ -202,6 +202,7 @@ lgb.plot_metric(evals_result, metric='f1')
 
 ### 2. Imblearn Package
 
+- Github: [https://github.com/scikit-learn-contrib/imbalanced-learn](https://github.com/scikit-learn-contrib/imbalanced-learn)  **(Re-sampling techniques)**
 - Kaggle Kernel: [SMOTE with Imbalance Data](https://www.kaggle.com/qianchao/smote-with-imbalance-data)
 - Pandas_ml Docs: [Handling imbalanced data](https://pandas-ml.readthedocs.io/en/latest/imbalance.html)
 
