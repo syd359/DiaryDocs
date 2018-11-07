@@ -54,3 +54,5 @@ def load_df(csv_path='../input/train.csv', nrows=None):
 print(os.listdir("../input"))
 ```
 
+### CUDA Installation  
+ link: https://www.python36.com/how-to-install-tensorflow-gpu-with-cuda-10-0-for-python-on-ubuntu/
