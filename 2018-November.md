@@ -1,9 +1,9 @@
 # 2018-11-14  
 
-### Some Interesting Machine Learning Projects
+### 1. Some Interesting Machine Learning Projects
 https://github.com/ydlan/ML-OpenSource-Projects
 
-### Check if string has date, any format  
+### 2. Check if string has date, any format  
 ```
 from dateutil.parser import parse
 
