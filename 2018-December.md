@@ -3,3 +3,7 @@
  - argparse: [Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)  
  - Dask: [Dask is a flexible library for parallel computing in Python](https://docs.dask.org/en/latest/)  
  - Numba: [Numba - JIT compiler that translates a subset of Python and NumPy code into fast machine code](http://numba.pydata.org/)  
+
+## 2. Useful Python Modules by Example  
+ **THE PYTHON 3 STANDARD LIBRARY BY EXAMPLE**  
+ - Link: https://pymotw.com/3/  
