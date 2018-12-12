@@ -7,3 +7,6 @@
 ## 2. Useful Python Modules by Example  
  **THE PYTHON 3 STANDARD LIBRARY BY EXAMPLE**  
  - Link: https://pymotw.com/3/  
+ 
+## 3. Stacking  
+ - A kaggler notebook: https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard
