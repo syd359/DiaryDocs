@@ -9,4 +9,6 @@
  - Link: https://pymotw.com/3/  
  
 ## 3. Stacking  
- - A kaggler notebook: https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard
+ - A kaggler notebook: https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard  
+ - A Python Module: http://rasbt.github.io/mlxtend/user_guide/classifier/StackingClassifier/  
+   Github: https://github.com/rasbt/mlxtend
