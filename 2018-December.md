@@ -22,3 +22,40 @@
 
 ## 5. Cython Learning
  - Github: https://github.com/cython/cython  
+
+## 6. Lift Chart Plot
+```
+def lift_chart_plot(yTrue, yPred):
+    """
+    Plot lift chart:
+    X-->False Positive Rate
+    y-->LIFT Score
+
+    :param yTrue:
+    :param yPred:
+    :return:
+    """
+    fpr, _, thresholds = roc_curve(yTrue, yPred)
+    print(thresholds.shape)
+    lift_score = np.array([(precision_score(yTrue,
+                                            np.where(yPred < threshold, 0, 1)) * yTrue.shape[0] / yTrue.sum())
+                           for threshold in thresholds])
+    fig = plt.figure(figsize=(10, 10))
+    plt.plot(fpr[5::10], lift_score[5::10])
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("LIFT")
+    plt.title("Lift Chart")
+    plt.show()
+
+
+if __name__ == "__main__":
+    X, y = make_classification(n_samples=10000, n_features=10)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+    svm_clf = SVC(probability=True)
+    svm_clf.fit(X_train, y_train)
+    y_pred = svm_clf.predict(X_test)
+    y_pred_proba = svm_clf.predict_proba(X_test)[:, 1]
+
+    lift_chart_plot(y_test, y_pred_proba)
+```
