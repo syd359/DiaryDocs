@@ -25,27 +25,49 @@
 
 ## 6. Lift Chart Plot
 ```
-def lift_chart_plot(yTrue, yPred):
-    """
-    Plot lift chart:
-    X-->False Positive Rate
-    y-->LIFT Score
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+import numpy as np
+# import scikitplot as skplt
+import matplotlib.pyplot as plt
 
-    :param yTrue:
-    :param yPred:
-    :return:
-    """
-    fpr, _, thresholds = roc_curve(yTrue, yPred)
-    print(thresholds.shape)
-    lift_score = np.array([(precision_score(yTrue,
-                                            np.where(yPred < threshold, 0, 1)) * yTrue.shape[0] / yTrue.sum())
-                           for threshold in thresholds])
-    fig = plt.figure(figsize=(10, 10))
-    plt.plot(fpr[5::10], lift_score[5::10])
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("LIFT")
-    plt.title("Lift Chart")
-    plt.show()
+
+def lift_chart_plot(yTrue, yPred, ax=None):
+    
+    sorted_indices = np.argsort(yPred)[::-1]
+    yTrue = yTrue[sorted_indices]
+    gains = np.cumsum(yTrue)
+
+    percentages = np.arange(start=1, stop=len(yTrue) + 1)
+
+    gains = gains / float(np.sum(yTrue))
+    percentages = percentages / float(len(yTrue))
+
+    gains = np.insert(gains, 0, [0])
+    percentages = np.insert(percentages, 0, [0])
+
+    percentages = percentages[1:]
+    gains2 = gains[1:]
+
+    gains2 = gains2 / percentages
+
+    if ax is None:
+        fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+
+    ax.set_title('Lift Chart', fontsize=15)
+
+    ax.plot(percentages, gains2, lw=3, label='Class 1')
+
+    ax.plot([0, 1], [1, 1], 'k--', lw=2, label='Baseline')
+
+    ax.set_xlabel('Percentage of sample', fontsize=10)
+    ax.set_ylabel('Lift', fontsize=10)
+    ax.tick_params(labelsize=10)
+    ax.grid('on')
+    ax.legend(loc='lower right', fontsize=10)
+
+    return ax
 
 
 if __name__ == "__main__":
@@ -55,7 +77,10 @@ if __name__ == "__main__":
     svm_clf = SVC(probability=True)
     svm_clf.fit(X_train, y_train)
     y_pred = svm_clf.predict(X_test)
-    y_pred_proba = svm_clf.predict_proba(X_test)[:, 1]
+    y_pred_proba = svm_clf.predict_proba(X_test)
 
-    lift_chart_plot(y_test, y_pred_proba)
+    # skplt.metrics.plot_lift_curve(y_test, y_pred_proba)
+    # plt.show()
+    lift_chart_plot(y_test, y_pred_proba[:, 1])
+    plt.show()
 ```
