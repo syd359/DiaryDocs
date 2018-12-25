@@ -84,3 +84,19 @@ if __name__ == "__main__":
     lift_chart_plot(y_test, y_pred_proba[:, 1])
     plt.show()
 ```
+
+## 7. KS Value
+**Kolmogorov-Smirnov** statistic on 2 samples.  
+_This is a two-sided test for the **null hypothesis:** 2 independent samples are drawn from the same continuous distribution_
+```
+def ks_value(data1, data2):
+    data1 = np.sort(data1)
+    data2 = np.sort(data2)
+    n1 = data1.shape[0]
+    n2 = data2.shape[0]
+    data_all = np.concatenate([data1, data2])
+    cdf1 = np.searchsorted(data1, data_all, side='right') / (1.0*n1)
+    cdf2 = np.searchsorted(data2, data_all, side='right') / (1.0*n2)
+    d = np.max(np.absolute(cdf1 - cdf2))
+    return d
+```
