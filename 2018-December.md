@@ -100,3 +100,23 @@ def ks_value(data1, data2):
     d = np.max(np.absolute(cdf1 - cdf2))
     return d
 ```
+```
+dump(svm_clf, 'svm_clf')
+    dump(lgb_clf, 'lgb_clf')
+    dump(xgb_clf, 'xgb_clf')
+    dump(rf_clf, 'rf_clf')
+
+    if os.path.exists('svm_clf'):
+        clf1 = load('svm_clf')
+        print(str(clf1.__class__).split('.')[-1].split('\'')[0])
+        print(clf1.predict(X_test)[0])
+    if os.path.exists('lgb_clf'):
+        clf1 = load('lgb_clf')
+        print(str(clf1.__class__).split('.')[-1].split('\'')[0])
+        print(clf1.predict(X_test)[0])
+    if os.path.exists('xgb_clf'):
+        clf1 = load('xgb_clf')
+        print(str(clf1.__class__).split('.')[-1].split('\'')[0])
+        print(clf1.predict(X_test)[0])
+        
+```
