@@ -24,6 +24,7 @@
  - Github: https://github.com/cython/cython  
 
 ## 6. Lift Chart Plot
+**Very Clear Explanation**: http://mlwiki.org/index.php/Cumulative_Gain_Chart  
 ```
 def lift_chart_plot(yTrue, yPred, ax=None):
     
