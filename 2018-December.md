@@ -25,14 +25,6 @@
 
 ## 6. Lift Chart Plot
 ```
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-import numpy as np
-# import scikitplot as skplt
-import matplotlib.pyplot as plt
-
-
 def lift_chart_plot(yTrue, yPred, ax=None):
     
     sorted_indices = np.argsort(yPred)[::-1]
@@ -68,21 +60,6 @@ def lift_chart_plot(yTrue, yPred, ax=None):
     ax.legend(loc='lower right', fontsize=10)
 
     return ax
-
-
-if __name__ == "__main__":
-    X, y = make_classification(n_samples=10000, n_features=10)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
-
-    svm_clf = SVC(probability=True)
-    svm_clf.fit(X_train, y_train)
-    y_pred = svm_clf.predict(X_test)
-    y_pred_proba = svm_clf.predict_proba(X_test)
-
-    # skplt.metrics.plot_lift_curve(y_test, y_pred_proba)
-    # plt.show()
-    lift_chart_plot(y_test, y_pred_proba[:, 1])
-    plt.show()
 ```
 
 ## 7. KS Value
@@ -102,21 +79,21 @@ def ks_value(data1, data2):
 ```
 ```
 dump(svm_clf, 'svm_clf')
-    dump(lgb_clf, 'lgb_clf')
-    dump(xgb_clf, 'xgb_clf')
-    dump(rf_clf, 'rf_clf')
+dump(lgb_clf, 'lgb_clf')
+dump(xgb_clf, 'xgb_clf')
+dump(rf_clf, 'rf_clf')
 
-    if os.path.exists('svm_clf'):
-        clf1 = load('svm_clf')
-        print(str(clf1.__class__).split('.')[-1].split('\'')[0])
-        print(clf1.predict(X_test)[0])
-    if os.path.exists('lgb_clf'):
-        clf1 = load('lgb_clf')
-        print(str(clf1.__class__).split('.')[-1].split('\'')[0])
-        print(clf1.predict(X_test)[0])
-    if os.path.exists('xgb_clf'):
-        clf1 = load('xgb_clf')
-        print(str(clf1.__class__).split('.')[-1].split('\'')[0])
-        print(clf1.predict(X_test)[0])
+if os.path.exists('svm_clf'):
+    clf1 = load('svm_clf')
+    print(str(clf1.__class__).split('.')[-1].split('\'')[0])
+    print(clf1.predict(X_test)[0])
+if os.path.exists('lgb_clf'):
+    clf1 = load('lgb_clf')
+    print(str(clf1.__class__).split('.')[-1].split('\'')[0])
+    print(clf1.predict(X_test)[0])
+if os.path.exists('xgb_clf'):
+    clf1 = load('xgb_clf')
+    print(str(clf1.__class__).split('.')[-1].split('\'')[0])
+    print(clf1.predict(X_test)[0])
         
 ```
