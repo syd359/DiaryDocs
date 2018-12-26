@@ -25,47 +25,44 @@
 
 ## 6. Lift Chart Plot
 **Very Clear Explanation**: http://mlwiki.org/index.php/Cumulative_Gain_Chart  
+Lift与Cumulative Gain之区别在于除不除当前的sample比例。
 ```
 def lift_chart_plot(yTrue, yPred, ax=None):
-    
     sorted_indices = np.argsort(yPred)[::-1]
     yTrue = yTrue[sorted_indices]
     gains = np.cumsum(yTrue)
-
+    gains = gains / float(np.sum(yTrue)) # 头部（按概率排序）中标/总的真实的True
+    
     percentages = np.arange(start=1, stop=len(yTrue) + 1)
-
-    gains = gains / float(np.sum(yTrue))
     percentages = percentages / float(len(yTrue))
 
     gains = np.insert(gains, 0, [0])
     percentages = np.insert(percentages, 0, [0])
-
     percentages = percentages[1:]
     gains2 = gains[1:]
 
-    gains2 = gains2 / percentages
-
+    gains2 = gains2 / percentages  # 计算Lift要除以sample ratio
+    
+    # 绘图
     if ax is None:
         fig, ax = plt.subplots(1, 1, figsize=(10, 10))
-
     ax.set_title('Lift Chart', fontsize=15)
-
     ax.plot(percentages, gains2, lw=3, label='Class 1')
-
     ax.plot([0, 1], [1, 1], 'k--', lw=2, label='Baseline')
-
     ax.set_xlabel('Percentage of sample', fontsize=10)
     ax.set_ylabel('Lift', fontsize=10)
     ax.tick_params(labelsize=10)
     ax.grid('on')
     ax.legend(loc='lower right', fontsize=10)
-
     return ax
 ```
 
 ## 7. KS Value
 **Kolmogorov-Smirnov** statistic on 2 samples.  
-_This is a two-sided test for the **null hypothesis:** 2 independent samples are drawn from the same continuous distribution_
+_This is a two-sided test for the **null hypothesis:** 2 independent samples are drawn from the same continuous distribution_  
+_it is sensitive to differences in both location and shape of the empirical cumulative distribution functions of the two samples._  
+> **Empirical distribution function**: This cumulative distribution function is a step function that jumps up by 1/n at each of the n data points. _**cumulative distribution function (CDF)** of a real-valued random variable X, or just distribution function of X, evaluated at x, is the probability that X will take a value less than or equal to x._  
+
 ```
 def ks_value(data1, data2):
     data1 = np.sort(data1)
