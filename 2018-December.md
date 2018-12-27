@@ -92,6 +92,25 @@ if os.path.exists('lgb_clf'):
 if os.path.exists('xgb_clf'):
     clf1 = load('xgb_clf')
     print(str(clf1.__class__).split('.')[-1].split('\'')[0])
-    print(clf1.predict(X_test)[0])
-        
+    print(clf1.predict(X_test)[0])     
+```
+```
+%%time
+for col in df_a.columns:
+    st = time.time()
+    pd.to_numeric(df_a[col], errors='ignore').dtypes
+    print(col, df_a[col].dtype, time.time() - st)
+%%time
+for col in df_a.columns:
+    st = time.time()
+    df_a[col].astype(np.float64, errors='ignore').dtype
+    print(col, df_a[col].dtype, time.time()-st)
+try:
+    import torch
+    if torch.cuda.is_available():
+        print("Use GPU (Pytorch) for Dtype Convert")
+    else:
+        print("CUDA is Not Installed Properly")
+except ModuleNotFoundError:
+    print("Pytorch not Install. Use CPU for Dtype Convert")
 ```
