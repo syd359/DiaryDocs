@@ -62,7 +62,6 @@ def lift_chart_plot(yTrue, yPred, ax=None):
 _This is a two-sided test for the **null hypothesis:** 2 independent samples are drawn from the same continuous distribution_  
 _it is sensitive to differences in both location and shape of the empirical cumulative distribution functions of the two samples._  
 > **Empirical distribution function**: This cumulative distribution function is a step function that jumps up by 1/n at each of the n data points. _**cumulative distribution function (CDF)** of a real-valued random variable X, or just distribution function of X, evaluated at x, is the probability that X will take a value less than or equal to x._  
-
 ```
 def ks_value(data1, data2):
     data1 = np.sort(data1)
@@ -75,6 +74,9 @@ def ks_value(data1, data2):
     d = np.max(np.absolute(cdf1 - cdf2))
     return d
 ```
+
+## 8. Linux `awk` replace/convert  
+In Python, use `subprocess` module to use Linux Commend  
 ```
 dump(svm_clf, 'svm_clf')
 dump(lgb_clf, 'lgb_clf')
