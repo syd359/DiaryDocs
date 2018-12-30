@@ -79,6 +79,7 @@ def ks_value(data1, data2):
 In Python, use `subprocess` module to use Linux Commend  
 
 1. **`perl`** for string replacement  
+`perl -i -pe 's/foo/bar/g' ./*`
 `perl -pi.bak -e 's/AAA/NA/g' awk_convert_test.csv`
 > `-p` processes, then prints <> line by line  
 > `-i` activates in-place editing. Files are backed up using the .bak extension  
