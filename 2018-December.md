@@ -79,12 +79,17 @@ def ks_value(data1, data2):
 In Python, use `subprocess` module to use Linux Commend  
 
 1. **`perl`** for string replacement  
-`perl -i -pe 's/foo/bar/g' ./*`  
-`perl -pi.bak -e 's/AAA/NA/g' awk_convert_test.csv`
-> `-p` processes, then prints <> line by line  
-> `-i` activates in-place editing. Files are backed up using the .bak extension  
-> The regex substitution acts on the implicit variable, which are the contents of the file, line-by-line  
-> This example is to **replace 'AAA' with 'NA'(which will be read as np.nan by Pandas)**  
+> `perl -i -pe 's/foo/bar/g' ./*`  
+```
+import os
+os.system(r"perl -i -pe 's/\\N/NA/g' test_data.csv")
+```
+> `perl -pi.bak -e 's/AAA/NA/g' awk_convert_test.csv`  
+
+`-p` processes, then prints <> line by line  
+`-i` activates in-place editing. Files are backed up using the .bak extension  
+The regex substitution acts on the implicit variable, which are the contents of the file, line-by-line  
+This example is to **replace 'AAA' with 'NA'(which will be read as np.nan by Pandas)**  
 2. **`awk`** convert string to float  
 `awk '{gsub(/\.?0+$/,"")}1' file`  
 ```
