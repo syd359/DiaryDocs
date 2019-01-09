@@ -5,3 +5,6 @@
 - Sample repository structure:      https://github.com/kennethreitz/samplemod  
 - License Type: https://choosealicense.com/  
 - A Human's Ultimate Guide to `setup.py`:  https://github.com/kennethreitz/setup.py  
+
+## 2. Coding Style  
+- PEP 8 — the Style Guide for Python Code:  https://pep8.org/  
