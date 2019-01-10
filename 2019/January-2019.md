@@ -8,3 +8,9 @@
 
 ## 2. Coding Style  
 - PEP 8 — the Style Guide for Python Code:  https://pep8.org/  
+
+## 3. A Sample For Fully use __func__ method example  
+> Vector Class  
+```
+Wait to be add
+```
