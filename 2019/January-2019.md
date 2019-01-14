@@ -77,3 +77,21 @@ class Vector2d:
         memv = memoryview(octets[1:]).cast(typecode)
         return cls(*memv)
 ```
+
+## 4. How to get all table definitions in a database in Hive?
+You can do this by writing a simple bash script and some bash commands.  
+
+First, write all table names in a database to a text file using:  
+`$hive -e 'show tables in <dbname>' | tee tables.txt`  
+Then create a bash script (describe_tables.sh) to loop over each table in this list:  
+```
+while read line
+do
+ echo "$line"
+ eval "hive -e 'describe <dbname>.$line'"
+done
+```
+Then execute the script:  
+`$chmod +x describe_tables.sh`  
+`$./describe_tables.sh < tables.txt > definitions.txt`  
+The definitions.txt file will contain all the table definitions.  
