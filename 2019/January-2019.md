@@ -11,7 +11,8 @@
 
 ## 3. A Sample For Fully use __func__ method example  
 **Vector Class** 
-> Detail tests and explains are in **Fluent Python** p261  
+> Detail tests and explains are in **Fluent Python** p261 
+> Full implementation in p289
 ```
 from array import array
 import math
