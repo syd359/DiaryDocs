@@ -100,3 +100,9 @@ The definitions.txt file will contain all the table definitions.
 # 2019-01-16  
 ## 1. Lime  
 > Github: https://github.com/marcotcr/lime  
+
+_Lime support H2o, so here FINALLY I only use H2o framework as my referance._  
+**2. H2o**
+- Github: [H2o Python Verion](https://github.com/h2oai/h2o-3/tree/master/h2o-py)  
+- Docs: http://docs.h2o.ai/h2o/latest-stable/h2o-docs/index.html  
+- Tutorial: https://github.com/h2oai/h2o-tutorials  
