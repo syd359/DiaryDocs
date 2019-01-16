@@ -96,3 +96,7 @@ Then execute the script:
 `$chmod +x describe_tables.sh`  
 `$./describe_tables.sh < tables.txt > definitions.txt`  
 The definitions.txt file will contain all the table definitions.  
+
+# 2019-01-16  
+## 1. Lime  
+> Github: https://github.com/marcotcr/lime  
