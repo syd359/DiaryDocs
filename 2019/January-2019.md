@@ -106,3 +106,19 @@ _Lime support H2o, so here FINALLY I only use H2o framework as my referance._
 - Github: [H2o Python Verion](https://github.com/h2oai/h2o-3/tree/master/h2o-py)  
 - Docs: http://docs.h2o.ai/h2o/latest-stable/h2o-docs/index.html  
 - Tutorial: https://github.com/h2oai/h2o-tutorials  
+
+## 2. Print text with color  
+Answers:  
+http://ozzmaker.com/add-colour-to-text-in-python/  
+https://stackoverflow.com/questions/16816013/is-it-possible-to-print-using-different-color-in-ipythons-notebook  
+
+On the default Python prompt:
+```
+>>> print("\x1b[31m\"red\"\x1b[0m")
+"red"
+```
+In the notebook:
+```
+In [28]: print("\x1b[31m\"red\"\x1b[0m")
+         "red"
+```
