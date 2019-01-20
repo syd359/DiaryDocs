@@ -122,3 +122,14 @@ In the notebook:
 In [28]: print("\x1b[31m\"red\"\x1b[0m")
          "red"
 ```
+
+## 3. Optuna
+**A hyperparameter optimization framework, particularly designed for machine learning. **  
+- Github: https://github.com/pfnet/optuna  
+- Docs: https://optuna.org  
+
+**Key Features**
+- Parallel distributed optimization
+- Pruning of unpromising trials
+- Web dashboard
+
