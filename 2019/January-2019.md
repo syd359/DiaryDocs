@@ -134,3 +134,8 @@ In [28]: print("\x1b[31m\"red\"\x1b[0m")
 - Web dashboard
 
 https://stackoverflow.com/questions/50558849/python-how-to-trace-function-execution-order-in-large-project
+
+# 2019-01-26
+## 1. Some useful Pandas Groupby usage
+`df.groupby(['col_name'])['other_col'].transform('mean')`  // transform other_col values to mean group by colname  
+`df.groupby(['col_name']).agg({'purchase_amount': ['sum', 'mean', 'max', 'min', 'std']})` // agg col groupy by colname  
