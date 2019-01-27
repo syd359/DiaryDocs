@@ -139,3 +139,7 @@ https://stackoverflow.com/questions/50558849/python-how-to-trace-function-execut
 ## 1. Some useful Pandas Groupby usage
 `df.groupby(['col_name'])['other_col'].transform('mean')`  // transform other_col values to mean group by colname  
 `df.groupby(['col_name']).agg({'purchase_amount': ['sum', 'mean', 'max', 'min', 'std']})` // agg col groupy by colname  
+`df.groupby(['col_name']).agg({'col_name': ['size']})`  
+**`df.groupby(['col_name'])['other_col'].value_counts().unstack()`**  
+
+
