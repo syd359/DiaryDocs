@@ -143,7 +143,7 @@ https://stackoverflow.com/questions/50558849/python-how-to-trace-function-execut
 **`df.groupby(['col_name'])['other_col'].value_counts().unstack()`**  
 
 ## 2. Factorization Machines (FM)  
-**field-aware factorization machines (FFM)**
+**field-aware factorization machines (FFM)**  
 Article: https://www.analyticsvidhya.com/blog/2018/01/factorization-machines/  
 中文的介绍: https://blog.csdn.net/john_xyz/article/details/78933253  
 
