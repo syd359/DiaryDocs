@@ -142,4 +142,16 @@ https://stackoverflow.com/questions/50558849/python-how-to-trace-function-execut
 `df.groupby(['col_name']).agg({'col_name': ['size']})`  
 **`df.groupby(['col_name'])['other_col'].value_counts().unstack()`**  
 
+## 2. Factorization Machines (FM)  
+**field-aware factorization machines (FFM)**
+Article: https://www.analyticsvidhya.com/blog/2018/01/factorization-machines/  
+中文的介绍: https://blog.csdn.net/john_xyz/article/details/78933253  
+
+## 3. Xlearn
+> **Implement FFM & FM**  
+_xLearn is a high performance, easy-to-use, and scalable machine learning package, including linear model (LR), factorization machines (FM), and field-aware factorization machines (FFM), which can be used to solve large-scale machine learning problems. xLearn is especially useful for solving machine learning problems on large-scale sparse data._
+
+**Github:** https://github.com/aksnzhy/xlearn  
+**Docs:** https://xlearn-doc.readthedocs.io/en/latest/index.html  
+
 
