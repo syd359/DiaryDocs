@@ -14,3 +14,15 @@ A variety of techniques exist to adapt supervised classifiers to the PU learning
 - Github: https://github.com/aldro61/pu-learning (Based On 2008 Paper)
 - Github: https://github.com/kiryor/nnPUlearning (Chainer implementation of non-negative PU learning and unbiased PU learning)
   - **Need Pytorch**
+
+
+## 2. Benefits to use `assert` in Python
+>When you are writing code filled with assert statements, you can be more confident that when execution reaches a certain point, certain conditions are guaranteed to be met.
+
+- Link 1: https://www.programiz.com/python-programming/assert-statement  
+- Link 2: http://pgbovine.net/programming-with-asserts.htm  
+
+> 
+Usage:   
+`assert <condition>`  
+`assert <condition>, <error message>`  
