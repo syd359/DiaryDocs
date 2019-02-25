@@ -26,3 +26,33 @@ A variety of techniques exist to adapt supervised classifiers to the PU learning
 Usage:   
 `assert <condition>`  
 `assert <condition>, <error message>`  
+
+
+## 3. PSI, 单变量分析
+- 分析feature importance最大的变量，在train，test上的分布（按照bins划分）是否基本一致
+```
+def cal_bins(classifier, train_data, test_data, num_bins=10, num_top_vars=5):
+    
+    assert(train_data.shape[0] >= num_bins, "The Given num_bins Larger Than train_data rows")
+    assert(len(train_data.columns) >= num_top_vars, "The Given num_top_vars Larger Than train_data columns")
+    
+    if isinstance(classifier, XGBClassifier):
+        top_cols = list(clf.get_booster().get_score(importance_type='gain'))[:num_top_vars]
+        
+    elif isinstance(classifier, LGBMClassifier):
+        top_cols = pd.DataFrame(
+            {'columns': lgb_model.booster_.feature_name(), 
+              'importance': lgb_model.booster_.feature_importance('gain')
+            }).sort_values(by='importance', ascending=False)['columns'][:num_top_vars].tolist()
+    else:
+        raise ValueError("The Classifier is Not XGBModel or LGBModel")
+    
+    for col in top_cols:
+        print("---- {} ----".format(col))
+        # train_data按照num_bins进行均分
+        equal_cut = pd.qcut(train_data[col], num_bins)
+        # test_data按照train_data的划分，将值划分开
+        test_cut = pd.cut(test_data[col], bins=equal_cut.cat.categories)
+        print((test_cut.value_counts() / test_data.shape[0] * 100).round(2).astype(str) + '%')
+        print('\n\n')
+```
