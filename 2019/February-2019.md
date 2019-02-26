@@ -29,6 +29,16 @@ Usage:
 
 
 ## 3. PSI, 单变量分析
+- **Population Stability Index**  
+> The population stability index simply indicates changes in the population of loan applicants. However, this may or may not result in deterioration in performance of the scorecard to predict risk. Nevertheless, the PSI indicates changes in the environment which need to be further investigated  
+
+  Explanation：http://ucanalytics.com/blogs/population-stability-index-psi-banking-case-study/
+  
+  Rules：  
+  Less than 0.1	 ---- Insignificant change ----	  No action required  
+  0.1 – 0.25	   ---- Some minor change	   ----   Check other scorecard monitoring metrics  
+  Greater than 0.25	---- Major shift in population ---- Need to delve deeper  
+
 - 分析feature importance最大的变量，在train，test上的分布（按照bins划分）是否基本一致
 ```
 def cal_bins(classifier, train_data, test_data, num_bins=10, num_top_vars=5):
