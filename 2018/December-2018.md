@@ -62,6 +62,23 @@ def lift_chart_plot(yTrue, yPred, ax=None):
 _This is a two-sided test for the **null hypothesis:** 2 independent samples are drawn from the same continuous distribution_  
 _it is sensitive to differences in both location and shape of the empirical cumulative distribution functions of the two samples._  
 > **Empirical distribution function**: This cumulative distribution function is a step function that jumps up by 1/n at each of the n data points. _**cumulative distribution function (CDF)** of a real-valued random variable X, or just distribution function of X, evaluated at x, is the probability that X will take a value less than or equal to x._  
+
+中文的一个解释KS值的：https://www.sohu.com/a/132667664_278472    
+KS(Kolmogorov-Smirnov)值越大，  
+表示模型能够将正、负客户区分开的程度越大。KS值的取值范围是[0，1]   
+通常来讲，KS>0.2即表示模型有较好的预测准确性。  
+
+常用的模型评价还有K-S曲线，它和ROC曲线的画法异曲同工。  
+以Logistic模型为例，首先把Logistic模型输出的概率从大到小排序，然后取10%的值（也就是概率值）作为阀值，  
+同理把10%*k（k=1,2,3,…,9）处的值作为阀值，  
+计算出不同的FPR和TPR值，以10%*k（k=1,2,3,…,9）为横坐标，分别以TPR和FPR的值为纵坐标，就可以画出两个曲线，这就是K-S曲线。  
+
+从K-S曲线就能衍生出KS值，KS=max(TPR-FPR)，即是两条曲线之间的最大间隔距离。  
+当(TPR-FPR)最大时，也就是ΔTPR-ΔFPR=0，这和ROC曲线上找最优阀值的条件ΔTPR=ΔFPR是一样的。  
+
+K-S曲线能直观地找出模型中差异最大的一个分段，比如评分模型就比较适合用KS值进行评估；  
+但同时，KS值只能反映出哪个分段是区分度最大的，不能反映出所有分段的效果。   
+
 ```
 def ks_value(data1, data2):
     data1 = np.sort(data1)
