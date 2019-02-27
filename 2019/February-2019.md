@@ -84,4 +84,43 @@ It helps to rank variables on the basis of their importance._
   0.1 to 0.3 ----	Medium predictive Power  
   0.3 to 0.5 ----	Strong predictive Power  
   \>0.5	 ---- Suspicious Predictive Power  
+```
+def weight_of_evidence(X, y, var, num_bins=10):
+    import warnings
+    from sklearn.utils.multiclass import type_of_target
+    
+    assert(type_of_target(y) == 'binary', "The target is Not Binary") 
+    ix0 = pd.Series(y).value_counts().index[0]
+    ix1 = pd.Series(y).value_counts().index[1]
+    
+    count0 = (y.values == ix0).sum()
+    count1 = (y.values == ix1).sum()
+    
+    assert(var in X.columns, "The variable(var) not in X columns")
+    if type_of_target(X[var]) == 'continuous':
+        equal_cut = pd.qcut(X[var], q=num_bins)
+        ix0_cut = pd.cut(X[var][y.values == ix0], 
+                         bins=equal_cut.cat.categories).value_counts()
+        ix1_cut = pd.cut(X[var][y.values == ix1], 
+                         bins=equal_cut.cat.categories).value_counts()
+        
+    elif type_of_target(X[var]) == 'multiclass':
+        warnings.warnings('\nVariable is Categorical Dtype, This implement of WoE may not correct')
+        ix0_cut = X[var][y.values == ix0].value_counts()
+        ix1_cut = X[var][y.values == ix1].value_counts()
+        
+    else:
+        raise ValueError("The Variable Dtype is {}, which is confusing".format(type_of_target(X[var])))
+    
+    tmp_df = pd.concat([ix0_cut, ix1_cut], axis=1)
+    tmp_df.columns = ['y=={}'.format(ix0), 'y=={}'.format(ix1)]
+    tmp_df['y=={} percent'.format(ix0)] = tmp_df['y=={}'.format(ix0)] / count0
+    tmp_df['y=={} percent'.format(ix1)] = tmp_df['y=={}'.format(ix1)] / count1
 
+    tmp_df['WOE'] = np.log(tmp_df['y=={} percent'.format(ix0)] / tmp_df['y=={} percent'.format(ix1)])
+    
+    tmp_df['IV_row'] = ((tmp_df['y=={} percent'.format(ix0)] - tmp_df['y=={} percent'.format(ix1)]) * tmp_df['WOE'])
+    tmp_df['IV'] = tmp_df['IV_row'].sum()
+
+    print(tmp_df)
+  ```
