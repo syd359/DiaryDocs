@@ -28,7 +28,7 @@ Usage:
 `assert <condition>, <error message>`  
 
 
-## 3. PSI, 单变量分析
+## 3. Population Stability Index (PSI)
 - **Population Stability Index**  
 > The population stability index simply indicates changes in the population of loan applicants. However, this may or may not result in deterioration in performance of the scorecard to predict risk. Nevertheless, the PSI indicates changes in the environment which need to be further investigated  
 
@@ -66,3 +66,22 @@ def cal_bins(classifier, train_data, test_data, num_bins=10, num_top_vars=5):
         print((test_cut.value_counts() / test_data.shape[0] * 100).round(2).astype(str) + '%')
         print('\n\n')
 ```
+
+## 4. Weight of Evidence & Information Value  
+**Clear Explaination**: https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html  
+- **WoE**   
+  _The weight of evidence tells the predictive power of an independent variable in relation to the dependent variable._
+  > The value of WoE will be 0 if the odds of Relative Frequency of Goods / Relative Frequency Bads is equal to 1.   
+If the Relative Frequency of Bads in a group is greater than the Relative Frequency of Goods, the odds ratio will be less than 1 and the WoE will be a negative number;   
+If the Relative Frequency of Goods is greater than the Relative Frequency of Bads in a group, the WoE value will be a positive number.     
+
+- **IV**  
+_Information value is one of the most useful technique to select important variables in a predictive model.  
+It helps to rank variables on the basis of their importance._  
+
+  Less than 0.02 ----	Not useful for prediction  
+  0.02 to 0.1 ----	Weak predictive Power  
+  0.1 to 0.3 ----	Medium predictive Power  
+  0.3 to 0.5 ----	Strong predictive Power  
+  \>0.5	 ---- Suspicious Predictive Power  
+
