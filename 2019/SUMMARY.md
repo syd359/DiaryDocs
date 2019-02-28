@@ -1,4 +1,10 @@
 ## TOP SUMMARY FOR 2019
+**Tricks Useful**  
+-  To get a list of all currently defined variables, run `who`   
+   For more detail, run `whos`  
+- `%xdel` to delete the variable and remove it from IPython's cache  
+
+
 ### 1. H2O
 Official Doc: http://docs.h2o.ai/h2o/latest-stable/h2o-docs/index.html    
 Python Doc: http://docs.h2o.ai/h2o/latest-stable/h2o-py/docs/index.html  
