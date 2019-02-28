@@ -28,7 +28,8 @@ Usage:
 `assert <condition>, <error message>`  
 
 
-## 3. Population Stability Index (PSI)
+# 2019-02-27
+## 1. Population Stability Index (PSI)
 - **Population Stability Index**  
 > The population stability index simply indicates changes in the population of loan applicants. However, this may or may not result in deterioration in performance of the scorecard to predict risk. Nevertheless, the PSI indicates changes in the environment which need to be further investigated  
 
@@ -67,7 +68,7 @@ def cal_bins(classifier, train_data, test_data, num_bins=10, num_top_vars=5):
         print('\n\n')
 ```
 
-## 4. Weight of Evidence & Information Value  
+## 2. Weight of Evidence & Information Value  
 **Clear Explaination**: https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html  
 - **WoE**   
   _The weight of evidence tells the predictive power of an independent variable in relation to the dependent variable._
@@ -124,3 +125,69 @@ def weight_of_evidence(X, y, var, num_bins=10):
 
     print(tmp_df)
   ```
+
+## 3. Time Decorator for time measurement   
+```
+import time
+from functools import wraps
+from time import time
+import inspect
+
+
+def _format_time(timespan, precision=3):
+    """Formats the timespan in a human readable form"""
+
+    if timespan >= 60.0:
+        # we have more than a minute, format that in a human readable form
+        # Idea from http://snipplr.com/view/5713/
+        parts = [("d", 60*60*24), ("h", 60*60), ("min", 60), ("s", 1)]
+        time_lst = []
+        leftover = timespan
+        for suffix, length in parts:
+            value = int(leftover / length)
+            if value > 0:
+                leftover = leftover % length
+                time_lst.append(u'%s%s' % (str(value), suffix))
+            if leftover < 1:
+                break
+        return " ".join(time_lst)
+    else:
+        return "{0:.{1}f}".format(timespan, precision)
+
+
+def timing(f):
+    @wraps(f)
+    def wrap(*args, **kw):
+        ts = time()
+        result = f(*args, **kw)
+        te = time()
+        # print('[%r] args:[%r, %r] took: %s sec' % (f.__name__, args, kw, _format_time(te-ts)))
+        print('[%r] args: [%s] took: %s sec' % (f.__name__, str(inspect.signature(f)), _format_time(te - ts)))
+        # str(inspect.signature(sssa)
+        return result
+    return wrap
+
+
+# An example
+@timing
+def f(a, key=None):
+    for _ in range(a):
+        i = 0
+    return -1
+
+
+if __name__ == "__main__":
+    # st = time.clock()
+    # time.sleep(5)
+    # end = time.clock()
+    #
+    # cpu_user = end - st
+    # print("CPU times: user %s" % (_format_time(cpu_user)))
+    for i in range(50):
+        if i < 10 or i > 40:
+            print(i)
+        elif i == 10:
+            print('...')
+```
+
+
