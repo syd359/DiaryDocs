@@ -97,6 +97,7 @@ In Python, use `subprocess` or `os` module to use Linux Commend
 
 1. **`sed`** Linux 原生命令 for string replacement
 > `sed -i -e 's/\\N/NaN/g' filename`    
+
 ```
 import os
 os.system(r"sed -i -e 's/\\N/NA/g' test_data.csv")
@@ -111,6 +112,8 @@ os.system(r"sed -i -e 's/\\N/NA/g' test_data.csv")
 > `perl -i -pe 's/foo/bar/g' ./*`  
 `-i` activates in-place editing.
 </br>
+
+
 ```
 dump(svm_clf, 'svm_clf')
 dump(lgb_clf, 'lgb_clf')
