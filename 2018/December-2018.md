@@ -102,9 +102,11 @@ import os
 os.system(r"sed -i -e 's/\\N/NA/g' test_data.csv")
 ```
 </br>
+
 2. **`awk`** convert string to float  
 > `awk '{gsub(/\.?0+$/,"")}1' file`  
 </br>
+
 3. **`perl`** for string replacement  
 > `perl -i -pe 's/foo/bar/g' ./*`  
 `-i` activates in-place editing.
