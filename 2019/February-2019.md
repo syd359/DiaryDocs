@@ -70,6 +70,7 @@ def cal_bins(classifier, train_data, test_data, num_bins=10, num_top_vars=5):
 
 ## 2. Weight of Evidence & Information Value  
 **Clear Explaination**: https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html  
+**Kinda More Details**: https://multithreaded.stitchfix.com/blog/2015/08/13/weight-of-evidence/  
 - **WoE**   
   _The weight of evidence tells the predictive power of an independent variable in relation to the dependent variable._
   > The value of WoE will be 0 if the odds of Relative Frequency of Goods / Relative Frequency Bads is equal to 1.   
