@@ -14,10 +14,10 @@ _Predict if an online bid is made by a machine or a human_
 - [Springleaf Marketing Response](https://www.kaggle.com/c/springleaf-marketing-response)  
 _Determine whether to send a direct mail piece to a customer_  
 
-- [Santander Customer Satisfaction](https://www.kaggle.com/c/santander-customer-satisfaction#description)  
-_https://www.kaggle.com/c/santander-customer-satisfaction#description_  
+- [Santander Customer Satisfaction](https://www.kaggle.com/c/santander-customer-satisfaction#description)   
+_Which customers are happy customers?_  
 
-- [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk)
+- [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk)  
 _Can you predict how capable each applicant is of repaying a loan?_
 
 - [Caterpillar Tube Pricing](https://www.kaggle.com/c/caterpillar-tube-pricing)  
