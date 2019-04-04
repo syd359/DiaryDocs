@@ -32,5 +32,6 @@ _Maximize sales and minimize returns of bakery goods_
 # 2019-03-31
 ## 1. PyODPS
 - [PyODPS 是ODPS的Python版本的SDK](https://pyodps.readthedocs.io/zh_CN/latest/)  
+- Github: https://github.com/aliyun/aliyun-odps-python-sdk  
 _ODPS的Python版本的SDK， 它提供了对ODPS对象的基本操作；并提供了DataFrame框架，能轻松在ODPS上进行数据分析。  
 
