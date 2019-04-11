@@ -8,4 +8,12 @@ _Predict how many future visitors a restaurant will receive._
 
 ## 2. Azkaban调度
 
-## 3. Tableau看板
+## 3. Plotly + Dash
+Link: https://plot.ly/d3-js-for-python-and-pandas-charts/  
+
+- **Plotly**
+ Github: https://github.com/plotly/plotly.py/  
+  _plotly.py is an interactive, open-source, and browser-based graphing library for Python_  
+- **Dash** 
+ Github: https://github.com/plotly/dash  
+ _Analytical Web Apps for Python. No JavaScript Required._  
