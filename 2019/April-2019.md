@@ -6,6 +6,6 @@ _Predict the value of transactions for potential customers._
 - [Recruit Restaurant Visitor Forecasting](https://www.kaggle.com/c/recruit-restaurant-visitor-forecasting/overview)  
 _Predict how many future visitors a restaurant will receive._  
 
-## 2.Azkaban调度
+## 2. Azkaban调度
 
 ## 3. Tableau看板
