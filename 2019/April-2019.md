@@ -8,7 +8,8 @@ _Predict how many future visitors a restaurant will receive._
 
 ## 2. Azkaban调度
 
-## 3. Plotly + Dash
+## 3. Plotly + Dash VS Bokeh Server
+**Plotly + Dash**  
 Link: https://plot.ly/d3-js-for-python-and-pandas-charts/  
 
 - **Plotly**
@@ -17,3 +18,8 @@ Link: https://plot.ly/d3-js-for-python-and-pandas-charts/
 - **Dash** 
  Github: https://github.com/plotly/dash  
  _Analytical Web Apps for Python. No JavaScript Required._  
+
+
+**Bokeh**  
+Link: https://bokeh.pydata.org/en/latest/docs/gallery.html  
+Server Tutorial: https://bokeh.pydata.org/en/latest/docs/user_guide/server.html#userguide-server  
