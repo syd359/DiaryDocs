@@ -28,3 +28,7 @@ Server Tutorial: https://bokeh.pydata.org/en/latest/docs/user_guide/server.html#
 - https://stackoverflow.com/questions/16631334/train-two-models-concurrently/16642099
 - https://stackoverflow.com/questions/36587211/easiest-way-to-read-csv-files-with-multiprocessing-in-pandas
 - https://docs.python.org/3/library/multiprocessing.html
+
+## 5. PrettyTable & Textwrap
+PrettyTable: https://github.com/jazzband/prettytable
+Textwrap: https://docs.python.org/3/library/textwrap.html
