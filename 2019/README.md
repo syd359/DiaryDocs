@@ -16,7 +16,14 @@ Python Doc: http://docs.h2o.ai/h2o/latest-stable/h2o-py/docs/index.html
 2. Cornell (Maybe No Video)
    Advanced Machine Learning Systems: http://www.cs.cornell.edu/courses/cs6787/2017fa/
 
-### 3. 国内的pip源
+### 3. Kaggle 比赛
+1. Rossmann Store Sales  
+_Forecast sales using store, promotion, and competitor data_  
+https://www.kaggle.com/c/rossmann-store-sales  
+
+
+
+### 4. 国内的pip源
 `pip3 install web.py -i https://pypi.douban.com/simple`
 
 - 阿里云 https://mirrors.aliyun.com/pypi/simple/
