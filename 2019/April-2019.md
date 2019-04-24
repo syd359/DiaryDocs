@@ -25,8 +25,8 @@ Link: https://bokeh.pydata.org/en/latest/docs/gallery.html
 Server Tutorial: https://bokeh.pydata.org/en/latest/docs/user_guide/server.html#userguide-server  
 
 ## 4. PrettyTable & Textwrap
-PrettyTable: https://github.com/jazzband/prettytable
-Textwrap: https://docs.python.org/3/library/textwrap.html
+PrettyTable: https://github.com/jazzband/prettytable  
+Textwrap: https://docs.python.org/3/library/textwrap.html  
 
 ## 5. 有些Kernel可以借鉴
  - https://www.kaggle.com/liananapalkova/automated-feature-engineering-for-titanic-dataset  
