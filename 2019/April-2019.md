@@ -24,11 +24,9 @@ Link: https://plot.ly/d3-js-for-python-and-pandas-charts/
 Link: https://bokeh.pydata.org/en/latest/docs/gallery.html  
 Server Tutorial: https://bokeh.pydata.org/en/latest/docs/user_guide/server.html#userguide-server  
 
-## 4. Multiprocessing
-- https://stackoverflow.com/questions/16631334/train-two-models-concurrently/16642099
-- https://stackoverflow.com/questions/36587211/easiest-way-to-read-csv-files-with-multiprocessing-in-pandas
-- https://docs.python.org/3/library/multiprocessing.html
-
-## 5. PrettyTable & Textwrap
+## 4. PrettyTable & Textwrap
 PrettyTable: https://github.com/jazzband/prettytable
 Textwrap: https://docs.python.org/3/library/textwrap.html
+
+## 5. 有些Kernel可以借鉴
+ - https://www.kaggle.com/liananapalkova/automated-feature-engineering-for-titanic-dataset  
