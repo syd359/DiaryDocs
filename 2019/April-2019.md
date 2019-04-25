@@ -6,7 +6,9 @@ _Predict the value of transactions for potential customers._
 - [Recruit Restaurant Visitor Forecasting](https://www.kaggle.com/c/recruit-restaurant-visitor-forecasting/overview)  
 _Predict how many future visitors a restaurant will receive._  
 
-## 2. Azkaban调度
+## 2. KddCup 2019  
+- https://www.kdd.org/kdd2019/kdd-cup  
+- https://dianshi.baidu.com/competition/29/rule  
 
 ## 3. Plotly + Dash VS Bokeh Server
 **Plotly + Dash**  
