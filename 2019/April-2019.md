@@ -30,5 +30,8 @@ Server Tutorial: https://bokeh.pydata.org/en/latest/docs/user_guide/server.html#
 PrettyTable: https://github.com/jazzband/prettytable  
 Textwrap: https://docs.python.org/3/library/textwrap.html  
 
-## 5. 有些Kernel可以借鉴
+## 5. Forecasting: Principles and Practice (Time Series Book)
+ - Link: https://otexts.com/fpp2/  
+
+  有些Kernel可以借鉴  
  - https://www.kaggle.com/liananapalkova/automated-feature-engineering-for-titanic-dataset  
