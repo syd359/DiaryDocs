@@ -43,19 +43,21 @@ for item in zip(tmp_data.columns, [1,2,3,4,5,6,7][::-1]*20):
 hist_data = tmp_data.sum(axis=0)
 hist_data.head()
 tmp_res = pd.Series([np.nan]*hist_data.shape[0], index = hist_data.index)
-for i in range(20):
+for i in range(10):
     X = tmp_data.iloc[:, i:i+30]
     print(X.columns[0],'----', X.columns[-1])
+    X = StandardScaler().fit_transform(X)
     y = tmp_data.iloc[:, i+30]
-    print(y.name)
     
     reg = LinearRegression()
     reg.fit(X, y)
+    print(y.sum(), "----", reg.predict(X).sum())
     
     X_test = tmp_data.iloc[:, i+1:i+31]
     print(X_test.columns[0],'----', X_test.columns[-1])
+    X_test = StandardScaler().fit_transform(X_test)
     tmp_res.iloc[i+31] = reg.predict(X_test).sum()
-    print(tmp_res.index[i+31])
+    print(tmp_res.index[i+31], '----', reg.predict(X_test).sum())
     
     print("\n")
 
