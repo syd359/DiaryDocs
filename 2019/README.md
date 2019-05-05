@@ -3,6 +3,9 @@
 -  To get a list of all currently defined variables, run `who`   
    For more detail, run `whos`  
 - `%xdel` to delete the variable and remove it from IPython's cache  
+- [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)  
+  Full Repository: https://github.com/google/styleguide
+
 
 
 ### 1. H2O
