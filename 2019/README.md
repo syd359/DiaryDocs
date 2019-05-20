@@ -27,7 +27,7 @@ https://www.kaggle.com/c/rossmann-store-sales
 
 
 ### 4. 国内的pip源
-`pip3 install web.py -i https://pypi.douban.com/simple`
+`pip3 install web.py -i https://pypi.mirrors.ustc.edu.cn/simple/`
 
 - 阿里云 https://mirrors.aliyun.com/pypi/simple/
 - 中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/ 
