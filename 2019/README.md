@@ -1,10 +1,9 @@
 ## TOP SUMMARY FOR 2019
 **Tricks Useful**  
--  To get a list of all currently defined variables, run `who`   
-   For more detail, run `whos`  
-- `%xdel` to delete the variable and remove it from IPython's cache  
+- pip国内安装慢，需要换源的URL （见下4）
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)  
   Full Repository: https://github.com/google/styleguide
+- Mac 安装 Lightgbm 后需要安装libomp `brew install libomp`  否则会报错  
 
 
 
